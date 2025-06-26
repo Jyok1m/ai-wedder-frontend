@@ -19,7 +19,7 @@ export default function CateringClientPage() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await fetch(`http://localhost:4002/catering/${region}`);
+				const res = await fetch(`${process.env.BACKEND_URL}/catering/${region}`);
 				if (res.ok) {
 					const data = await res.json();
 					setCateringCompanies(data.companies || []);
